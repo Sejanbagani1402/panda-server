@@ -21,7 +21,8 @@ export class UsersService {
       data: {
         email,
         password: hashedPassword,
-        name,
+        name: name || undefined,
+        authProvider: 'LOCAL',
       },
     });
 
@@ -47,12 +48,13 @@ export class UsersService {
       data: {
         email,
         password: hashedPassword,
-        name,
+        name: name || undefined,
+        authProvider: 'FIREBASE',
       },
     });
 
     const { password: _, ...userWithoutPassword } = user;
-    return userWithoutPassword;
+    return userWithoutPassword as any;
   }
 
   async findByEmail(email: string) {
@@ -81,7 +83,7 @@ export class UsersService {
   async updateOnboardingStatus(userId: string, isOnboarded: boolean) {
     return this.prisma.user.update({
       where: { id: userId },
-      data: { isOnboarded },
+      data: { isOnboarded: isOnboarded },
     });
   }
 }

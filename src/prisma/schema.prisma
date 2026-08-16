@@ -11,17 +11,23 @@ datasource db {
 
 model User {
   id            String    @id @default(cuid())
+  firebaseUid   String?   @unique
   email         String    @unique
   password      String?
-  name          String
+  name          String?
   profileImage  String?
+  authProvider  AuthProvider @default(LOCAL)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  
+  isOnboarded   Boolean?  @default(false)
+
   goals         Goal[]
   reflections   Reflection[]
-  
+}
 
+enum AuthProvider {
+  FIREBASE
+  LOCAL
 }
 
 model Goal {

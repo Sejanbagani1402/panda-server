@@ -16,7 +16,9 @@
       "Exec(git remote)",
       "Exec(git branch)",
       "Exec(git push)",
-      "Exec(pnpm approve-builds)"
+      "Exec(pnpm approve-builds)",
+      "Exec(Remove-Item)",
+      "Exec(pnpm run)"
     ]
   }
 }
