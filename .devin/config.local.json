@@ -11,7 +11,12 @@
       "Exec(Move-Item)",
       "Exec(Copy-Item)",
       "Exec(git status)",
-      "Exec(git add)"
+      "Exec(git add)",
+      "Exec(git commit)",
+      "Exec(git remote)",
+      "Exec(git branch)",
+      "Exec(git push)",
+      "Exec(pnpm approve-builds)"
     ]
   }
 }
