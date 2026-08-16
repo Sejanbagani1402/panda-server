@@ -57,7 +57,7 @@ export class FirebaseStrategy extends PassportStrategy(Strategy, 'firebase') {
         throw new UnauthorizedException('Email is required from Firebase token');
       }
       
-      let user = await this.usersService.findByEmail(decodedToken.email);
+      let user = await this.usersService.findByEmailWithoutPassword(decodedToken.email);
       
       if (!user) {
         // Create user if doesn't exist

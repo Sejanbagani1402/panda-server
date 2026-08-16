@@ -17,6 +17,7 @@ model User {
   name          String?
   profileImage  String?
   authProvider  AuthProvider @default(LOCAL)
+  preferences   Json?     @default("{}")
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   isOnboarded   Boolean?  @default(false)
