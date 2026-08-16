@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Exec(Get-ChildItem)",
+      "Exec(pnpm dlx)",
+      "Exec(pnpm install)",
+      "Exec(New-Item)",
+      "Exec(pnpm add)",
+      "Exec(npx prisma)",
+      "Exec(Move-Item prisma)",
+      "Exec(Move-Item)",
+      "Exec(Copy-Item)",
+      "Exec(git status)",
+      "Exec(git add)"
+    ]
+  }
+}
