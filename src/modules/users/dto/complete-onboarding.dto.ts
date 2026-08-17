@@ -1,12 +1,9 @@
-import { IsString, IsOptional } from 'class-validator';
+import { IsString, IsOptional, IsNotEmpty } from 'class-validator';
 
 export class CompleteOnboardingDto {
   @IsString()
-  name: string;
-
-  @IsOptional()
-  @IsString()
-  profileImage?: string;
+  @IsNotEmpty()
+  name!: string;
 
   @IsOptional()
   preferences?: Record<string, any>;

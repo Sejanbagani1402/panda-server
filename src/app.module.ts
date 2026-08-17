@@ -6,6 +6,9 @@ import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
 import { OnboardingModule } from './modules/onboarding/onboarding.module';
+import { GoalsModule } from './modules/goals/goals.module';
+import { MilestonesModule } from './modules/milestones/milestones.module';
+import { ActionsModule } from './modules/actions/actions.module';
 
 @Module({
   imports: [
@@ -16,6 +19,9 @@ import { OnboardingModule } from './modules/onboarding/onboarding.module';
     AuthModule,
     UsersModule,
     OnboardingModule,
+    GoalsModule,
+    MilestonesModule,
+    ActionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

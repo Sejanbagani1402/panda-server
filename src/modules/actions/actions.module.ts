@@ -1,0 +1,13 @@
+import { Module } from '@nestjs/common';
+import { ActionsService } from './actions.service';
+import { ActionsController } from './actions.controller';
+import { PrismaModule } from '../../prisma/prisma.module';
+import { GoalsModule } from '../goals/goals.module';
+
+@Module({
+  imports: [PrismaModule, GoalsModule],
+  controllers: [ActionsController],
+  providers: [ActionsService],
+  exports: [ActionsService],
+})
+export class ActionsModule {}

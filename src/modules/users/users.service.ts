@@ -113,12 +113,11 @@ export class UsersService {
     return userWithoutPassword;
   }
 
-  async completeOnboarding(userId: string, onboardingData: { name: string; profileImage?: string; preferences?: Record<string, any> }) {
+  async completeOnboarding(userId: string, onboardingData: { name: string; preferences?: Record<string, any> }) {
     const user = await this.prisma.user.update({
       where: { id: userId },
       data: {
         name: onboardingData.name,
-        profileImage: onboardingData.profileImage,
         preferences: onboardingData.preferences || {},
         isOnboarded: true,
       },
